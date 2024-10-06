@@ -25,7 +25,7 @@ public class UserServiceImp implements UserService {
 
     @Override
     public List<User> getUsersList(int count) {
-        if (count <= 0 || count >= userDao.getUsersList().size()) {
+        if (count >= userDao.getUsersList().size()) {
             return userDao.getUsersList();
         } else {
             return userDao.getUsersList().stream().limit(count).collect(Collectors.toList());
